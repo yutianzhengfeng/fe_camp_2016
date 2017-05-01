@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	    window.onunload=onunload_message();
+	    function onunload_message()
+	    {
+	    	alert("你确定要离开吗？");
+	    }
+	    function message()
+	    {
+	    	alert("正在加载");
+	    }
+	    function change()
+	    {
+	    	alert("你确定要更改吗？");
+	    }
+	    function show()
+	    {
+            alert("聚焦");
+	    }
+	    function hide()
+	    {
+            alert("失焦");
+	    }
+	    function count(){
+	    	var x=parseFloat(document.getElementById("f-num").value);
+	    	
+	    	var y=parseFloat(document.getElementById("s-num").value);
+            var z=document.getElementById("select").value;
+            var a="";
+            switch(z)
+            {
+            	case '+':a=x+y;break;
+            	case '-':a=x-y;break;
+            	case '*':a=x*y;break;
+            	case '/':a=x/y;break;
+            	default :a='';
+
+            }
+            document.getElementById("answer").value=a;
+
+	    }
+	</script>
+</head>
+<body onload="message()">
+    <input type="text" id="f-num" onchange="change()">
+    <select id="select">
+        <option value="+">+</option>
+        <option value="-">_</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="s-num" >
+    <input type="button" onclick="count()" value="=">
+    <input type="text" id="answer" onfogcus="show()" onblur="hide()">
+
+
+
+	
+</body>
+</html>
